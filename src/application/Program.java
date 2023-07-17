@@ -1,6 +1,5 @@
 package application;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -46,6 +45,14 @@ public class Program {
 		searchedSeller.setName("Birijin");
 		sellerDao.update(searchedSeller);
 		System.out.println("updated!");
+		
+		System.out.println("-----------------------------------------");
+		System.out.println("Testing delete: ");
+		
+		System.out.print("enter the id for delete seller: ");
+		Integer id_delete = sc.nextInt();
+		
+		sellerDao.deleteById(id_delete);
 		
 		/*System.out.println("-----------------------------------------");
 		System.out.println("Testing Seller Insert: ");
