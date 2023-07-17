@@ -1,5 +1,6 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
@@ -21,10 +22,6 @@ public class Program2 {
 		Department new_dep = new Department(null, dep_name);
 		departmentDao.insert(new_dep);
 		System.out.println("new department inserted!");
-		
-		
-		
-		
 		
 		
 		sc.close();
