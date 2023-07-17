@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,6 +38,13 @@ public class Program {
 		for (Seller s : list) {
 			System.out.println(s);
 		}
+		
+		System.out.println("-----------------------------------------");
+		System.out.println("Testing Seller Insert: ");
+		
+		Seller seller1 = new Seller(null, "Arabe maldito", "arab@hotmail.com", new Date(), 4000.00, departm);
+		sellerDao.insert(seller1);
+		System.out.println("Inserted ! new Seller ID: " + seller1.getId());
 		
 		sc.close();
 
