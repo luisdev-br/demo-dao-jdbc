@@ -40,11 +40,19 @@ public class Program {
 		}
 		
 		System.out.println("-----------------------------------------");
+		System.out.println("Testing update: ");
+		
+		searchedSeller = sellerDao.findById(1);
+		searchedSeller.setName("Birijin");
+		sellerDao.update(searchedSeller);
+		System.out.println("updated!");
+		
+		/*System.out.println("-----------------------------------------");
 		System.out.println("Testing Seller Insert: ");
 		
 		Seller seller1 = new Seller(null, "Arabe maldito", "arab@hotmail.com", new Date(), 4000.00, departm);
 		sellerDao.insert(seller1);
-		System.out.println("Inserted ! new Seller ID: " + seller1.getId());
+		System.out.println("Inserted ! new Seller ID: " + seller1.getId());*/
 		
 		sc.close();
 
