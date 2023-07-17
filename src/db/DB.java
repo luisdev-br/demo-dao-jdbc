@@ -1,5 +1,6 @@
 package db;
 
+import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -38,9 +39,9 @@ public class DB {
 	}
 	
 	private static Properties loadProperties() {
-		try (FileInputStream fs = new FileInputStream("db.properties")) {
+		try (BufferedInputStream bs = new BufferedInputStream(new FileInputStream("db.properties"))) {
 			Properties props = new Properties();
-			props.load(fs);
+			props.load(bs);
 			return props;
 		}
 		catch (IOException e) {

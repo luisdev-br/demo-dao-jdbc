@@ -14,7 +14,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
-		
+		System.out.println("-----------------------------------------");
 		System.out.print("Enter the id of seller: ");
 		Integer id_seller = sc.nextInt();
 		
@@ -22,11 +22,20 @@ public class Program {
 		System.out.println("Seller Searched: ");
 		System.out.println(searchedSeller);
 		
-		System.out.println("Testing search by Department ID: ");
-		Department departm = new Department(2, null);
+		System.out.println("-----------------------------------------");
+		System.out.println("Testing search by Department ID: " + id_seller);
+		Department departm = new Department(id_seller, null);
 		List<Seller> list = sellerDao.findByDepartment(departm);
 		for (Seller obj : list) {
 			System.out.println(obj);
+		}
+		
+		System.out.println("-----------------------------------------");
+		System.out.println("Testing findAll: ");
+		list = sellerDao.findAll();
+		
+		for (Seller s : list) {
+			System.out.println(s);
 		}
 		
 		sc.close();
